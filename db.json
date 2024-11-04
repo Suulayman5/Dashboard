@@ -1,0 +1,20 @@
+{
+    "activities": [
+      {
+        "user": { "name": "Ronald Bradley", "img": "/path/to/image1.jpg" },
+        "commit": "Initial commit",
+        "date": "May 6, 2018"
+      },
+      {
+        "user": { "name": "Russell Gibson", "img": "/path/to/image2.jpg" },
+        "commit": "Main structure",
+        "date": "April 22, 2018"
+      },
+      {
+        "user": { "name": "Beverly Armstrong", "img": "/path/to/image3.jpg" },
+        "commit": "Left sidebar adjustments",
+        "date": "April 15, 2018"
+      }
+    ]
+  }
+  
