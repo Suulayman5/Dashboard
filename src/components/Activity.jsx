@@ -21,6 +21,7 @@ const Activity = () => {
   // Chart data and configuration
   const lineData = {
     labels: data.map((item) => item.date), // Example: using dates for the x-axis labels
+    // labels: false,
     datasets: [
       {
         label: 'Purchases',
@@ -29,8 +30,10 @@ const Activity = () => {
         backgroundColor: 'rgba(25, 118, 210, 0.2)',
         fill: true,
         tension: 0.4,
-        borderWidth: 2,
+        borderWidth: 1,
         pointRadius: 0,
+        
+        // width
       },
     ],
   };
@@ -40,7 +43,7 @@ const Activity = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: false,
+        display: true,
       },
       tooltip: {
         enabled: true,
@@ -60,20 +63,20 @@ const Activity = () => {
       </div>
 
       {/* Table for user, commit, and date */}
-      <div className="border-t border-gray-200 mt-4">
+      <div className="border-t w-full border-gray-200 mt-4">
         {data.map((item, index) => (
           <div key={index} className="flex items-center justify-between py-3 border-b border-gray-100 text-sm text-gray-800">
-            <div className="flex items-center space-x-3">
-              <img src={item.user.img} alt={item.user.name} className="w-8 h-8 rounded-full" />
+            <div className="flex items-center w-1/3 space-x-3">
+              <img src={item.user.img} alt={item.user.name} className="w-10 h-10 rounded-full" />
               <span className="font-medium">{item.user.name}</span>
             </div>
-            <p className="flex-1 text-center text-gray-500">{item.commit}</p>
-            <div className="flex items-center space-x-2">
+            <p className="flex-1 w-1/3 text-left text-gray-500">{item.commit}</p>
+            <div className="flex items-center w-1/3 space-x-2">
               <span className="text-gray-400 text-xs">{item.date}</span>
+            </div>
               <button className="text-gray-500">
                 <DeleteOutlineIcon fontSize="small" />
               </button>
-            </div>
           </div>
         ))}
       </div>

@@ -21,6 +21,7 @@ const activitySlice = createSlice({
     fetchActivityDataFailure: (state, action) => {
       state.loading = false;
       state.error = action.payload;
+      console.log(state.error)
     },
   },
 });

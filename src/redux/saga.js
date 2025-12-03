@@ -5,20 +5,12 @@ import {
   fetchActivityDataSuccess,
   fetchActivityDataFailure,
 } from './activitySlice';
+import activitiesJson from './../db.json';
 
-// API call to fetch activity data
-const fetchActivityDataApi = async () => {
-  const response = await fetch('http://localhost:5000/activities');
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
-};
-
-// Worker saga: makes the API call when fetchActivityData is dispatched
 function* fetchActivityDataSaga() {
   try {
-    const data = yield call(fetchActivityDataApi);
+       const data = activitiesJson.activities;  
+
     yield put(fetchActivityDataSuccess(data));
   } catch (error) {
     yield put(fetchActivityDataFailure(error.message));

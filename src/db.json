@@ -1,0 +1,20 @@
+{
+    "activities": [
+      {
+        "user": { "name": "Ronald Bradley", "img": "https://www.manga-jam.com/wp-content/uploads/2011/07/HowDrawNarutoStep_11.jpg" },
+        "commit": "Initial commit",
+        "date": "May 6, 2018"
+      },
+      {
+        "user": { "name": "Russell Gibson", "img": "https://static.wikitide.net/deathbattlewiki/4/4d/Portrait.sasukeuchiha.png" },
+        "commit": "Main structure",
+        "date": "April 22, 2018"
+      },
+      {
+        "user": { "name": "Beverly Armstrong", "img": "https://www.manga-jam.com/wp-content/uploads/2018/09/How-Draw-Minato-Naruto-11.jpg" },
+        "commit": "Left sidebar adjustments",
+        "date": "April 15, 2018"
+      }
+    ]
+  }
+  
