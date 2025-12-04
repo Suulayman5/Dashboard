@@ -1,4 +1,5 @@
-
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const stats = [
   { title: "New Tickets", value: "43", change: "+6%" },
   { title: "Closed Today", value: "17", change: "-3%" },
@@ -15,17 +16,24 @@ const Dashboard = () => (
       {stats.map((stat) => (
         <div
           key={stat.title}
-          className="bg-white p-4 w-42 h-30 rounded shadow text-center  relative"
+          className="bg-white p-6 w-42 h-30 rounded shadow text-center  relative"
         >
           <div
-            className={` absolute top 0 right-0 mr-4 text-xs ${
-              stat.change.startsWith("+") ? "text-green-500" : "text-red-500"
+            className={` absolute flex items-center top 0 right-0 mr-4 text-xs ${
+              stat.change.startsWith("+") ? "text-green-400" : "text-red-500"
             }`}
           >
             {stat.change}
+            <span>
+              {stat.change.startsWith("+") ? (
+                <KeyboardArrowUpIcon fontSize="small" />
+              ) : (
+                <KeyboardArrowDownIcon fontSize="small" />
+              )}
+            </span>
           </div>
-          <div className="text-2xl mt-4 font-semibold">{stat.value}</div>
-          <div className="text-gray-400  mt-2text-sm">{stat.title}</div>
+          <div className="text-2xl text-gray-700 mt-4 font-semibold">{stat.value}</div>
+          <div className="text-gray-400 mt-1 text-sm">{stat.title}</div>
         </div>
       ))}
     </div>

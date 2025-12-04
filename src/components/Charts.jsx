@@ -10,13 +10,13 @@ const Charts = () => {
     datasets: [
       {
         data: [63, 37],
-        backgroundColor: ["#4CAF50", "#E0E0E0"],
-        borderWidth: 1,
+        backgroundColor: ["#36ba14", "#96ed80"],
+        borderWidth: 2,
       },
     ],
   };
   const donutOptions = {
-    cutout: "70%", // adjust thickness of the ring
+    cutout: "60%", // adjust thickness of the ring
     plugins: {
       legend: { display: false },
       tooltip: { enabled: true },

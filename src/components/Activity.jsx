@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend, Filler } from 'chart.js';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { fetchActivityData } from '../redux/activitySlice';
+import { _toLeftRightCenter } from 'chart.js/helpers';
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend, Filler);
 
@@ -25,13 +26,15 @@ const Activity = () => {
     datasets: [
       {
         label: 'Purchases',
-        data: data.map((item) => item.commit.length), // Example: using commit length as sample data
-        borderColor: '#1976D2',
+        data: data.map((item) => item.date.length), // Example: using commit length as sample data
+        // borderColor: '#1976D2',
         backgroundColor: 'rgba(25, 118, 210, 0.2)',
         fill: true,
-        tension: 0.4,
-        borderWidth: 1,
+        // tension: 0.4,
+        borderWidth: 2,
+        borderColor: '#1976D2',
         pointRadius: 0,
+         
         
         // width
       },
@@ -39,15 +42,34 @@ const Activity = () => {
   };
 
   const lineOptions = {
-    responsive: true,
+    responsive: false,
     maintainAspectRatio: false,
     plugins: {
       legend: {
         display: true,
+        position: 'top',
+        margin: 10,
+        // _toLeftRightCenter: 'center',
+        align: 'start',
+        justifyContent: 'center',
+        labels: {
+          boxWidth: 10,
+          backgroundColor: '#96ed80',
+          font: {
+            size: 10,
+          },
+        },
       },
+      // title: {
+      //   display: false,
+      //   text: 'Development Activity',  
+      //   moveBy: 20,
+
+      // },
       tooltip: {
-        enabled: true,
+        enabled: false,
       },
+      
     },
     scales: {
       x: { grid: { display: false } },
