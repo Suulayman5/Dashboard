@@ -42,7 +42,7 @@ const Activity = () => {
   };
 
   const lineOptions = {
-    responsive: false,
+    responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
